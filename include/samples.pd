@@ -1,0 +1,17 @@
+#N canvas 941 277 383 505 10;
+#X obj 20 283 sample \$1 pad10;
+#X obj 20 306 sample \$1 pad11;
+#X obj 20 343 sample \$1 pad12;
+#X obj 20 366 sample \$1 pad13;
+#X obj 20 389 sample \$1 pad14;
+#X obj 20 412 sample \$1 pad15;
+#X obj 20 24 sample \$1 pad0;
+#X obj 20 47 sample \$1 pad1;
+#X obj 20 70 sample \$1 pad2;
+#X obj 20 93 sample \$1 pad3;
+#X obj 20 130 sample \$1 pad4;
+#X obj 20 153 sample \$1 pad5;
+#X obj 20 176 sample \$1 pad6;
+#X obj 20 199 sample \$1 pad7;
+#X obj 20 237 sample \$1 pad8;
+#X obj 20 260 sample \$1 pad9;
