@@ -1,0 +1,129 @@
+#N canvas 69 23 671 792 10;
+#X declare -path include;
+#X obj 53 34 notein;
+#X floatatom 53 82 5 0 0 0 - - -, f 5;
+#X obj 34 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 91 82 5 0 0 0 - - -, f 5;
+#X floatatom 129 80 5 0 0 0 - - -, f 5;
+#X obj 283 29 ctlin, f 6;
+#X floatatom 284 81 5 0 0 0 - - -, f 5;
+#X floatatom 321 81 5 0 0 0 - - -, f 5;
+#X floatatom 357 81 5 0 0 0 - - -, f 5;
+#X obj 53 170 - 48;
+#X obj 91 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 91 170 > 0;
+#X floatatom 53 198 5 0 0 0 - - -, f 5;
+#X obj 24 317 adc~;
+#X obj 104 381 dbtorms;
+#X floatatom 104 358 5 0 0 0 - - -, f 5;
+#X obj 60 434 *~ 0;
+#X floatatom 60 530 5 0 0 0 - - -, f 5;
+#X obj 162 238 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8900 1;
+#X obj 60 505 env~;
+#X obj 60 557 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5337 1;
+#X obj 98 434 *~ 0;
+#X floatatom 98 530 5 0 0 0 - - -, f 5;
+#X obj 98 505 env~;
+#X obj 98 557 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5337 1;
+#X obj 374 657 dac~;
+#X obj 447 596 dbtorms;
+#X floatatom 447 573 5 0 0 0 - - -, f 5;
+#X obj 374 629 *~ 0;
+#X obj 412 629 *~ 0;
+#X obj 549 412 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8900 1;
+#X obj 392 429 r \$0_outtabctl;
+#X obj 467 31 declare -path include;
+#X obj 452 128 sample bank00 pad00;
+#X obj 171 500 send~ snd_00;
+#X obj 171 531 send~ snd_01;
+#X floatatom 291 553 5 0 0 0 - - -, f 5;
+#X obj 291 528 env~;
+#X obj 291 580 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 329 553 5 0 0 0 - - -, f 5;
+#X obj 329 528 env~;
+#X obj 329 580 vsl 15 90 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 292 372 s sample;
+#X obj 245 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 265 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 286 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 305 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 374 460 catch~ out_00;
+#X obj 412 485 catch~ out_01;
+#X msg 462 263 list bank00 pad00 play;
+#X msg 245 209 list bank00 pad00 rec \$1;
+#X msg 265 231 list bank00 pad01 rec \$1;
+#X msg 279 253 list bank00 pad02 rec \$1;
+#X msg 296 276 list bank00 pad03 rec \$1;
+#X msg 472 283 list bank00 pad01 play;
+#X msg 482 303 list bank00 pad02 play;
+#X msg 490 325 list bank00 pad03 play;
+#X obj 452 151 sample bank00 pad01;
+#X obj 452 174 sample bank00 pad02;
+#X obj 452 197 sample bank00 pad03;
+#X msg 491 357 list bank00 pad00 write;
+#X msg 493 377 list bank00 pad00 read;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 4 0;
+#X connect 1 0 9 0;
+#X connect 3 0 11 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 2 8 0;
+#X connect 9 0 12 0;
+#X connect 11 0 10 0;
+#X connect 13 0 16 0;
+#X connect 13 1 21 0;
+#X connect 14 0 16 1;
+#X connect 14 0 21 1;
+#X connect 15 0 14 0;
+#X connect 16 0 19 0;
+#X connect 16 0 35 0;
+#X connect 17 0 20 0;
+#X connect 18 0 15 0;
+#X connect 19 0 17 0;
+#X connect 21 0 23 0;
+#X connect 21 0 34 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 26 0 28 1;
+#X connect 26 0 29 1;
+#X connect 27 0 26 0;
+#X connect 28 0 25 0;
+#X connect 29 0 25 1;
+#X connect 30 0 27 0;
+#X connect 36 0 38 0;
+#X connect 37 0 36 0;
+#X connect 39 0 41 0;
+#X connect 40 0 39 0;
+#X connect 43 0 50 0;
+#X connect 44 0 51 0;
+#X connect 45 0 52 0;
+#X connect 46 0 53 0;
+#X connect 47 0 28 0;
+#X connect 47 0 37 0;
+#X connect 48 0 29 0;
+#X connect 48 0 40 0;
+#X connect 49 0 42 0;
+#X connect 50 0 42 0;
+#X connect 51 0 42 0;
+#X connect 52 0 42 0;
+#X connect 53 0 42 0;
+#X connect 54 0 42 0;
+#X connect 55 0 42 0;
+#X connect 56 0 42 0;
+#X connect 60 0 42 0;
+#X connect 61 0 42 0;
